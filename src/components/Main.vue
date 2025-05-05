@@ -3,6 +3,7 @@ import { useAccountStore } from "@/stores/account";
 import { type Account } from "@/types";
 import { ref } from "vue";
 import FormAccount from "./FormAccount.vue";
+import Flash from "./Flash.vue";
 
 const store = useAccountStore();
 store.loadStore();
@@ -32,6 +33,10 @@ const newAccount = ref<Account | null>(null);
 
   <div class="flex flex-col gap-2">
     <hr />
+    <Flash
+      >Для указания нескольких меток для одной пары логин/пароль используйте
+      разделитель ;</Flash
+    >
     <div class="flex gap-2 font-bold">
       <div class="w-50">Метки</div>
       <div class="w-50">Тип записи</div>
