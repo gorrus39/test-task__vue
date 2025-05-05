@@ -77,7 +77,7 @@ onMounted(() => validate());
 </script>
 
 <template>
-  <form class="flex gap-1">
+  <form class="flex gap-1 items-center">
     <u-input
       :value="transformMarksToInput(formState.marks)"
       :class="{ 'ring-1 ring-red-500 rounded-md': errorFields.has('marks') }"
@@ -116,5 +116,7 @@ onMounted(() => validate());
       :class="{ 'ring-1 ring-red-500 rounded-md': errorFields.has('password') }"
       @blur="trySubmit"
     />
+
+    <delete-action v-if="account.id" :account-id="account.id" />
   </form>
 </template>
