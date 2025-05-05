@@ -32,6 +32,13 @@ const newAccount = ref<Account | null>(null);
 
   <div class="flex flex-col gap-2">
     <hr />
+    <div class="flex gap-2 font-bold">
+      <div class="w-50">Метки</div>
+      <div class="w-50">Тип записи</div>
+      <div class="w-24">Логин</div>
+      <div>Пароль</div>
+    </div>
+    <hr />
     <FormAccount
       v-for="account in store.accounts"
       :account
