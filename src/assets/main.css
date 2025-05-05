@@ -1,2 +1,14 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+body{
+    max-width: 1800px;
+
+    display: flex;
+    justify-content: center;
+    min-height: 100vh
+}
+
+#app {
+    @apply p-6 bg-gray-50;
+}

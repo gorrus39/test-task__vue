@@ -1,6 +1,14 @@
 import type { Account } from "@/types";
 import { defineStore } from "pinia";
 
+const getId = (): number => {
+  const accounts = readFromLocalStorage();
+  if (!accounts) return 0;
+
+  const max = Math.max(...accounts.map((account) => account.id!));
+  return max + 1;
+};
+
 const writeToLocalStorage = (data: Account[]): void =>
   localStorage.setItem("accounts", JSON.stringify(data));
 
@@ -17,7 +25,8 @@ export const useAccountStore = defineStore("accounts", {
       if (saved) this.accounts = saved;
     },
     createAccount(data: Account) {
-      this.accounts.push(data);
+      const id = getId();
+      this.accounts.push({ ...data, id });
       writeToLocalStorage(this.accounts);
     },
     deleteAccount(id: number) {

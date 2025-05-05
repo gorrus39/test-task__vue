@@ -5,9 +5,9 @@ import { createPinia } from "pinia";
 import App from "./App.vue";
 import ui from "@nuxt/ui/vue-plugin";
 import { createMemoryHistory, createRouter } from "vue-router";
-import HomeView from "./components/ HomeView.vue";
+import Main from "./components/Main.vue";
 
-const routes = [{ path: "/", component: HomeView }];
+const routes = [{ path: "/", component: Main }];
 
 const router = createRouter({
   history: createMemoryHistory(),
