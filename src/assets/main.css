@@ -11,4 +11,5 @@ body{
 
 #app {
     @apply p-6 bg-gray-50;
+    width: 800px;
 }

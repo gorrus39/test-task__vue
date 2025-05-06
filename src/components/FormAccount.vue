@@ -82,7 +82,7 @@ onMounted(() => validate());
       :value="transformMarksToInput(formState.marks)"
       :class="{ 'ring-1 ring-red-500 rounded-md': errorFields.has('marks') }"
       @update:model-value="
-        (val) => (formState.marks = transformInputToMarks(String(val)))
+        (val: string | number) => (formState.marks = transformInputToMarks(String(val)))
       "
       @blur="trySubmit"
     />
@@ -113,6 +113,7 @@ onMounted(() => validate());
     <u-input
       v-model="formState.password"
       v-if="formState.type === 'local'"
+      class="flex-1"
       :class="{ 'ring-1 ring-red-500 rounded-md': errorFields.has('password') }"
       @blur="trySubmit"
     />
