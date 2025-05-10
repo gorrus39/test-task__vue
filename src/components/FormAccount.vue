@@ -118,6 +118,6 @@ onMounted(() => validate());
       @blur="trySubmit"
     />
 
-    <delete-action v-if="account.id" :account-id="account.id" />
+    <delete-action v-if="typeof account.id === 'number'" :account-id="account.id" />
   </form>
 </template>
